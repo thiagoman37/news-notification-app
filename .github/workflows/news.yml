@@ -3,12 +3,15 @@ name: News Summary Notification
 on:
   schedule:
     # 毎朝 7:00 JST (= UTC 22:00 前日) に実行
-    - cron: "0 22 * * *"
+    - cron: "0 21 * * *"
     # 毎夕 19:00 JST (= UTC 10:00) に実行
-    - cron: "0 10 * * *"
+    - cron: "0 12 * * *"
 
   # 手動でも実行できるようにする（テスト用）
   workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   notify:
